@@ -1,0 +1,15 @@
+create database veterinario;
+use veterinario;
+create table FuncaoCategoria(idFuncao integer auto_increment primary key,nome varchar(100),descricao varchar(100));
+create table Cliente(idCliente integer auto_increment primary key,cpf integer,dataCadstr date,nome varchar(100),email varchar(100),telefone integer);
+create table Pet (idPet integer auto_increment primary key,categoria varchar(100),carteirinha integer,codDono integer,porte varchar(100),raca varchar(100),cor varchar(100),nome varchar(100),idade integer);
+create table PetCat(idPetCat integer auto_increment primary key,nomePetCat varchar(100));
+create table funcionario(idFuncionario integer auto_increment primary key,funcao varchar(100),email varchar(100),nome varchar(100),horaEntd datetime,telefone integer,salario decimal,dataAdmsao date,numeroCT integer,horaSaida datetime,cpf integer,supervisor varchar(100));
+create table agenda(idAgenda integer auto_increment primary key,servico varchar(100),pet varchar(100),data date);
+create table Servico(idServico integer auto_increment primary key,valor decimal,nome varchar(100),descricao varchar(100),utilizaveis varchar(100));
+create table carteirinha(idCarteirinha integer auto_increment primary key,pet varchar(100));
+create table alimento(idAlimento integer auto_increment primary key,descricao varchar(100),quant integer,valor decimal,nome varchar(100),CatPet varchar(100));
+create table CategoriaItem(idCatItem integer auto_increment primary key,nomeCatItem varchar(100));
+create table formaPagamento(NotaFiscal integer auto_increment primary key,descricao varchar(100),cliente varchar(100),metodo varchar(100),tipoCompra varchar(100),valor decimal);
+create table Utilizavel(IdUtilizavel integer auto_increment primary key,nome varchar(100),descricao varchar(100),quant integer,preco decimal);
+create table Item(IdItem integer auto_increment primary key,nome varchar(100),CatItem varchar(100),valor decimal,descricao varchar(100),detalhes varchar(100));
